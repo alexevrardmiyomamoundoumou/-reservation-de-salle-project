@@ -1,0 +1,1 @@
+0 1 * * * /bin/bash /home/alex/Bureau/-reservation-de-salle-project/backup/backup.sh >> /home/alex/Bureau/-reservation-de-salle-project/backup/cron.log 2>&1

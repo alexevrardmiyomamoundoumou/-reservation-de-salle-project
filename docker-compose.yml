@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  user-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: user_db
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+    networks:
+      - default
+
+  salle-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: salle_db
+    volumes:
+      - salle-db-data:/var/lib/postgresql/data
+    networks:
+      - default
+
+  reservation-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: reservation_db
+    volumes:
+      - reservation-db-data:/var/lib/postgresql/data
+    networks:
+      - default
+
+
+volumes:
+  reservation-db-data:
+  salle-db-data:
+  user-db-data:
